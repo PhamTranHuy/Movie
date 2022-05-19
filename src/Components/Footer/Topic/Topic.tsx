@@ -1,19 +1,20 @@
 import PropTypes, { InferProps } from 'prop-types';
 
 const topicType = {
-    topic: {
-        title: PropTypes.string,
-        detail: [{
-            text: PropTypes.string,
-            url: PropTypes.string
-        }]
-    }
+    title: PropTypes.string,
+    detail: PropTypes.shape({
+        text: PropTypes.string,
+        url: PropTypes.string,
+    })
 }
 
-export default function Topic ({ topic }: InferProps<typeof topicType>) {
+type TopicProps = InferProps<typeof topicType>
+
+export default function Topic ({ title, detail }: TopicProps) {
   return (
     <div>
-      {topic?.title}
+      {title}
+      {detail?.text}
     </div>
   );
 }

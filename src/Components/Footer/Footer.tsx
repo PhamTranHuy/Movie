@@ -10,7 +10,7 @@ export default function Footer () {
           <button className="px-5 py-2 text-lightBlue bg-white font-bold text-xl rounded-md">JOIN THE COMMUNITY</button>
       </div>
       <div className="flex-center">
-        <Topic />
+        <Topic title={'title'} detail={{text: 'aaa', url: 'aaaa'}}/>
       </div>
     </div>
   );
