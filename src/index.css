@@ -26,6 +26,6 @@ code {
 		@apply flex items-center justify-between
 	}
 	.layout-max-w {
-		@apply max-w-[1432px]
+		@apply max-w-[1300px]
 	}
 }
