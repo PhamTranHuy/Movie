@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import Footer from './Footer/Footer';
 import Header from './Header/Header';
 
 type props = {
@@ -10,10 +10,7 @@ export default function Layout ({ children }: props) {
     <div>
         <Header />
       {children}
+      <Footer />
     </div>
   );
 }
-
-Layout.propTypes = {
-    children: PropTypes.elementType
-};
