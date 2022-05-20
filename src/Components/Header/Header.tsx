@@ -2,7 +2,7 @@ import Navigator from "./Navigator/Navigator";
 
 export default function Header() {
 	return (
-		<div className="bg-darkBlue font-semibold">
+		<div className="fixed top-0 left-0 right-0 bg-darkBlue font-semibold">
 			<div className="layout-max-w m-auto">
 				<div className="flex-between px-10 py-5">
 					<div className="flex-between">

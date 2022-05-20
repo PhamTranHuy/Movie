@@ -4,7 +4,7 @@ import { FC } from 'React';
 
 export default function Layout (Page: FC) {
     return () => (
-        <div>
+        <div className="pt-16">
             <Header />
             <Page />
             <Footer />

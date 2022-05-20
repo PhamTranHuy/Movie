@@ -3,7 +3,7 @@ import { TOPICS } from "./data";
 
 export default function Footer() {
   return (
-    <div className="flex-bottom pb-40 bg-darkBlue">
+    <div className="flex-bottom pb-40 pt-12 bg-darkBlue">
         <div className="flex items-end flex-col mr-5">
             <div className="w-[130px] mb-12">
                 <img alt='' src={process.env.PUBLIC_URL + '/footer/logo.svg'} />
