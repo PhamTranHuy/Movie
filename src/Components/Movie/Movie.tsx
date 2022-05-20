@@ -16,31 +16,34 @@ function Movie({name, point, img, date}: props) {
                     <img alt='' src={img} className="rounded-lg"/>
                     <div className="absolute bottom-[-20px] left-[10px]">
                         <CircularProgressbar value={60} text={`${60}﹪`} 
-                        background
-                        backgroundPadding={6}
-                        styles={{
-                            root: {
-                                width: '42px',
-                            },
-                            background: {
-                                fill: '#081c22',
-                            },
-                            text: {
-                                // Text color
-                                fill: '#fff',
-                                // Text size
-                                fontSize: '32px',
-                                fontWeight: 'bold'
-                            },
-                            path: {
-                                // Path color
-                                stroke: `#21d07a`,
-                            },
-                            // Customize the circle behind the path, i.e. the "total progress"
-                            trail: {
-                                stroke: '#21d07a66',
-                            }
+                            background
+                            backgroundPadding={6}
+                            styles={{
+                                root: {
+                                    width: '42px',
+                                },
+                                background: {
+                                    fill: '#081c22',
+                                },
+                                text: {
+                                    // Text color
+                                    fill: '#fff',
+                                    // Text size
+                                    fontSize: '32px',
+                                    fontWeight: 'bold'
+                                },
+                                path: {
+                                    // Path color
+                                    stroke: `#21d07a`,
+                                },
+                                // Customize the circle behind the path, i.e. the "total progress"
+                                trail: {
+                                    stroke: '#21d07a66',
+                                }
                         }}/>
+                    </div>
+                    <div className="absolute top-2 right-2 w-7 opacity-60 group">
+                        <img className="group-hover:circle-menu-blue" alt='' src={process.env.PUBLIC_URL + '/Home/circle-more.svg'} />
                     </div>
             </div>
             <div className="pl-2">

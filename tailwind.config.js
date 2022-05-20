@@ -8,7 +8,7 @@ module.exports = {
         darkBlue: '#042541',
         lightBlue: '#05b3e4'
       }
-    },
+    }
   },
   plugins: [
     function ({ addVariant }) {

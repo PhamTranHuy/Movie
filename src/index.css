@@ -49,3 +49,10 @@ input {
     	-webkit-text-fill-color: transparent;
 	}
 }
+
+@layer utilities {
+	.circle-menu-blue {
+		@apply opacity-100;
+    	filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%) hue-rotate(156deg) brightness(98%) contrast(99%);
+	}
+}
