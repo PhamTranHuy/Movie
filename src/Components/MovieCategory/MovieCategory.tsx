@@ -31,7 +31,7 @@ function MovieCategory({title}: props) {
 
     return (
         <div>
-            <div className="flex font-semibold">
+            <div className="flex font-semibold px-10">
                 <div className="mr-5 text-2xl">{title}</div>
                 <div id="filter-wrapper" className="relative flex border border-black rounded-3xl">
                     {FILTERS.map((name, index) => (
