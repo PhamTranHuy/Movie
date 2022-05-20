@@ -1,9 +1,9 @@
-import Layout from "./Components/Layout.tsx";
+import Home from './Page/Home'
 
 function App() {
     return (
 		<div className="bg-black text-white">
-			<Layout></Layout>
+			<Home />
 		</div>
     );
 }
