@@ -3,10 +3,10 @@ import Header from '../Components/Header/Header';
 import { FC } from 'React';
 
 export default function Layout (Page: FC) {
-    return (props: any) => (
+    return () => (
         <div>
             <Header />
-            <Page {...props} />
+            <Page />
             <Footer />
         </div>
     )

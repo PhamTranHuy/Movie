@@ -28,6 +28,9 @@ code {
 	.flex-bottom {
 		@apply flex items-end justify-center
 	}
+	.flex-left-bottom {
+		@apply flex items-end justify-start
+	}
 	.flex-top {
 		@apply flex items-start justify-center
 	}
