@@ -42,3 +42,8 @@ input {
 		@apply max-w-[1300px]
 	}
 }
+@layer component {
+	.filter-active {
+		@apply bg-darkBlue
+	}
+}
