@@ -1,12 +1,13 @@
 import clsx from 'clsx';
-import { useState, useLayoutEffect } from 'react';
+import { useState, useLayoutEffect, ReactNode } from 'react';
 
 interface props {
-    title?: string
+    title?: string,
+    children?: ReactNode
 }
 const FILTERS = ["On TV", "In Theaters"];
 
-function MovieCategory({title}: props) {
+function MovieCategory({title, children}: props) {
     const [filter, setFilter] = useState<string>(FILTERS[0]);
     const [filterBgPosition, setFilterBgPosition] = useState<{}>();
 
@@ -49,7 +50,9 @@ function MovieCategory({title}: props) {
                         bg-darkBlue rounded-3xl"></div>
                 </div>
             </div>
-            <div>body</div>
+            <div>
+                {children}
+            </div>
         </div>
     )
 }
