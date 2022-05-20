@@ -18,6 +18,10 @@ code {
 		monospace;
 }
 
+input {
+	outline: none !important
+}
+
 @layer base {
 	.flex-center {
 		@apply flex items-center justify-center
