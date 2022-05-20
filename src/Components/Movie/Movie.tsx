@@ -1,8 +1,55 @@
-import React from 'react'
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
-function Movie() {
+interface props {
+    name?: string,
+    date?: Date,
+    img?: string,
+    point?: number
+}
+
+function Movie({name, point, img, date}: props) {
   return (
-    <div>Movie</div>
+    <div className="mx-2">
+        <div>
+            <div className="relative w-[150px] h-[225px] mb-6 rounded-lg">
+                    <img alt='' src={img} className="rounded-lg"/>
+                    <div className="absolute bottom-[-20px] left-[10px]">
+                        <CircularProgressbar value={60} text={`${60}﹪`} 
+                        background
+                        backgroundPadding={6}
+                        styles={{
+                            root: {
+                                width: '42px',
+                            },
+                            background: {
+                                fill: '#081c22',
+                            },
+                            text: {
+                                // Text color
+                                fill: '#fff',
+                                // Text size
+                                fontSize: '32px',
+                                fontWeight: 'bold'
+                            },
+                            path: {
+                                // Path color
+                                stroke: `#21d07a`,
+                            },
+                            // Customize the circle behind the path, i.e. the "total progress"
+                            trail: {
+                                stroke: '#21d07a66',
+                            }
+                        }}/>
+                    </div>
+            </div>
+            <div className="pl-2">
+                <div className="font-bold">{name}</div>
+                <div className="text-[#00000099]">date</div>
+            </div>
+        </div>
+        
+    </div>
   )
 }
 
