@@ -8,7 +8,7 @@ function SeachBox() {
     return (
         <form className="relative text-lg overflow-hidden rounded-3xl"
             onSubmit={(e) => {e.preventDefault()}}
-            accept-charset="utf-8">
+            acceptCharset="utf-8">
             <label>
                 <input className="w-full h-12 px-5 py-3
                     text-[#686868] leading-[46px]"

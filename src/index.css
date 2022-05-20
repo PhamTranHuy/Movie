@@ -43,7 +43,9 @@ input {
 	}
 }
 @layer component {
-	.filter-active {
-		@apply bg-darkBlue
+	.filter-gradient-text {
+		@apply bg-gradient-to-r from-[#c0fecf] to-[#1ed5a9];
+		-webkit-background-clip: text;
+    	-webkit-text-fill-color: transparent;
 	}
 }
