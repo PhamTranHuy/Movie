@@ -7,10 +7,10 @@ type props = {
 
 export default function Layout ({ children }: props) {
   return (
-    <div>
-        <Header />
-      {children}
-      <Footer />
-    </div>
+        <div>
+            <Header />
+            {children}
+            <Footer />
+        </div>
   );
 }

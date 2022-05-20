@@ -25,6 +25,12 @@ code {
 	.flex-between {
 		@apply flex items-center justify-between
 	}
+	.flex-bottom {
+		@apply flex items-end justify-center
+	}
+	.flex-top {
+		@apply flex items-start justify-center
+	}
 	.layout-max-w {
 		@apply max-w-[1300px]
 	}
