@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { useState, useLayoutEffect, ReactNode } from 'react';
+import CustomScrollbar from '../CustomScrollbar/CustomScrollbar';
 
 interface props {
     title?: string,
@@ -29,7 +30,6 @@ function MovieCategory({title, children}: props) {
     useLayoutEffect(() => {
         setFilterBgPosition(getFilterPosition());
     }, [filter])
-
     return (
         <div>
             <div className="flex font-semibold px-10">
@@ -50,9 +50,9 @@ function MovieCategory({title, children}: props) {
                         bg-darkBlue rounded-3xl"></div>
                 </div>
             </div>
-            <div>
+            <CustomScrollbar style={{ width: '100%', height: '380px' }} >
                 {children}
-            </div>
+            </CustomScrollbar>
         </div>
     )
 }
