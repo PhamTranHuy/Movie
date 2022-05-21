@@ -6,7 +6,7 @@ interface props {
     title?: string,
     children?: ReactNode
 }
-const FILTERS = ["On TV", "In Theaters"];
+export const FILTERS = ["On TV", "In Theaters"];
 
 function MovieCategory({title, children}: props) {
     const [filter, setFilter] = useState<string>(FILTERS[0]);
