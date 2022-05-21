@@ -1,5 +1,5 @@
 import { CircularProgressbar } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
+import { formatDay } from '../../libs/format';
 
 interface props {
     name?: string,
@@ -48,7 +48,7 @@ function Movie({name, point, img, date}: props) {
             </div>
             <div className="pl-2">
                 <div className="font-bold">{name}</div>
-                <div className="text-[#00000099]">date</div>
+                <div className="text-[#00000099]">{formatDay(new Date())}</div>
             </div>
         </div>
         
