@@ -1,7 +1,6 @@
 import { getPosterURL } from './Api';
 
 export const formatDay = (date) => {
-    console.log(date);
     const options = { year: 'numeric', month: 'short', day: 'numeric' };
     const newDate = new Date(date);
     return newDate.toLocaleDateString("en-US", options)

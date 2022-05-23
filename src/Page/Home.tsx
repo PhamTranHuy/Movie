@@ -1,3 +1,4 @@
+import Lasted from '../Components/Home/Lasted/Lasted'
 import Popular from '../Components/Home/Popular/Popular'
 import WelcomeBanner from '../Components/Home/WelcomeBanner/WelcomeBanner'
 import Layout from '../HOC/Layout'
@@ -8,6 +9,7 @@ function Home() {
             <div className="layout-max-w m-auto">
                 <WelcomeBanner />
                 <Popular />
+                <Lasted />
             </div>
         </div>
     )

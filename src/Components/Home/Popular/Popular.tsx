@@ -13,19 +13,18 @@ function Popular() {
     }
 
     useEffect(() => {
+        if(!filter) return;
         const getMovies = async () => {
             const data = await getPopular(filter);
-            console.log('request done');
             const movies = formatMovieData(data.data.results);
             setMovies(movies);
         }
         try {
             getMovies();
         }
-       catch (error) {
+        catch (error) {
            console.error(error);
-       }
-       console.log('popular');
+        }
     }, [filter])
     return (
         <section className="text-black pt-8">

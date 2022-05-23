@@ -11,7 +11,14 @@ export const getPopular = async (filter = FILTERS[0]) => {
     }
 }
 
+export const getLasted = async (filter = FILTERS[0]) => {
+    if (filter === FILTERS[0]) {
+        return axios.get(`https://api.themoviedb.org/3/tv/on_the_air?api_key=${API_KEY}&language=en-US&page=1`)
+    } else {
+        return axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`)
+    }
+}
+
 export const getPosterURL = (path) => {
-    // return `https://image.tmdb.org/t/p/original/${path}`;
     return `https://image.tmdb.org/t/p/w500/${path}`
 }
