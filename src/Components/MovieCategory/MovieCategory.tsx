@@ -57,7 +57,7 @@ function MovieCategory({title, children, onFilterChange}: props) {
             </div>
             <CustomScrollbar style={{ width: '100%'}}
                  autoHeight
-                 autoHeightMin={380}
+                 autoHeightMin={320}
                  autoHeightMax={450}>
                 {children}
             </CustomScrollbar>
