@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { useState, useEffect, ReactNode } from 'react';
+import { useState, useEffect, ReactNode, useRef } from 'react';
 import CustomScrollbar from '../CustomScrollbar/CustomScrollbar';
 
 interface props {
@@ -12,10 +12,11 @@ export const FILTERS = ["On TV", "In Theaters"];
 function MovieCategory({title, children, onFilterChange}: props) {
     const [filter, setFilter] = useState<string>(FILTERS[0]);
     const [filterBgPosition, setFilterBgPosition] = useState<{}>();
+    const filterWrapper = useRef<any>();
 
     const getFilterPosition = () => {
-        const wrapper = document.querySelector("#filter-wrapper");
-        const filterActive = document.querySelector(".filter-gradient-text");
+        const wrapper = filterWrapper.current;
+        const filterActive = wrapper.querySelector(".filter-gradient-text");
         if (!filterActive || !wrapper) return;
         const filterBounding = filterActive.getBoundingClientRect();
         const wrapperBounding = wrapper.getBoundingClientRect();
@@ -38,7 +39,7 @@ function MovieCategory({title, children, onFilterChange}: props) {
         <div>
             <div className="flex font-semibold px-10">
                 <div className="mr-5 text-2xl">{title}</div>
-                <div id="filter-wrapper" className="relative flex border border-black rounded-3xl">
+                <div ref={filterWrapper} className="relative flex border border-black rounded-3xl">
                     {FILTERS.map((name, index) => (
                         <div key={index} 
                             style={{transition: 'all 0.25s'}}
