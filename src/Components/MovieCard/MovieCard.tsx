@@ -20,7 +20,7 @@ const CircularProgressbarStyle = {
         fontWeight: 'bold'
     }
 }
-function Movie({name, point, img, date}: props) {
+function MovieCard({name, point, img, date}: props) {
     const getPathColor = (point?: number) => {
         if (!point) return; 
         if (point >= 70) {
@@ -78,4 +78,4 @@ function Movie({name, point, img, date}: props) {
     )
 }
 
-export default Movie
+export default MovieCard

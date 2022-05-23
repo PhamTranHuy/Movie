@@ -1,4 +1,4 @@
-import Movie from "../../Movie/Movie"
+import MovieCard from "../../MovieCard/MovieCard"
 import MovieCategory from "../../MovieCategory/MovieCategory"
 import { getPopular } from "../../../libs/Api";
 import { formatMovieData } from "../../../libs/format";
@@ -33,7 +33,7 @@ function Popular() {
                 <div className="flex mt-5 pb-10">
                     {movies?.map((movie, id) => (
                         <div key={id} className="first:ml-7">
-                            <Movie name={movie.name} img={movie.img_url} point={movie.point} date={movie.date}/>
+                            <MovieCard name={movie.name} img={movie.img_url} point={movie.point} date={movie.date}/>
                         </div>
                     ))}
                     <div id="space" className="pl-7" />
