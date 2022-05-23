@@ -7,23 +7,29 @@ interface props {
     name?: string,
     id?: number,
     img?: string,
-    filter?: string
+    filter?: string,
+    onMouseEnter?: (url?: string) => void
 }
 interface videoType {
     name?: string,
     id?: number
 }
 
-function TrailerCard({id, name, img, filter}: props) {
+function TrailerCard({id, name, img, filter, onMouseEnter}: props) {
     const [video, setVideo] = useState<videoType>();
+
+    const handleMouseEnter = () => {
+        if (!onMouseEnter) return;
+        onMouseEnter(img);
+    }
     useEffect(() => {
         (async () => {
             const res = await getVideo(filter, id);
             const video = formatTrailerVideo(res.data.results);
-            console.log(video);
             setVideo(video);
-        })()
+        })();
     }, [id, filter])
+
     return (
         <div className={clsx(
             "mx-2",
@@ -32,7 +38,8 @@ function TrailerCard({id, name, img, filter}: props) {
             <div>
                 <div className="relative w-[300px] h-[168px] mb-6 
                     rounded-lg transition
-                    group hover:scale-[1.05]">
+                    group hover:scale-[1.05]"
+                    onMouseEnter={handleMouseEnter}>
                     <img alt='' src={img} className="rounded-lg"/>
                     <div className="absolute top-2 right-2 w-7 opacity-60 z-20">
                         <img className="hover:circle-menu-blue" alt='' src={process.env.PUBLIC_URL + '/Home/circle-more.svg'} />

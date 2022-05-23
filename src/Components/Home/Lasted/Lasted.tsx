@@ -6,10 +6,15 @@ import TrailerCard from '../../TrailerCard/TrailerCard';
 
 function Lasted() {
     const [trailers, setTrailers] = useState<any[]>();
-    const [filter, setFilter] = useState();
+    const [filter, setFilter] = useState<any>();
+    const [bgUrl, setBgUrl] = useState<string | undefined>();
 
     const handleFilterChange = (filter: any) => {
         setFilter(filter);
+    }
+    const handleCardHover = (url?: string) => {
+        const bgUrl = url?.replace('w500', 'w780');
+        setBgUrl(bgUrl);
     }
 
     useEffect(() => {
@@ -26,18 +31,31 @@ function Lasted() {
            console.error(error);
         }
     }, [filter])
+    
     return (
-        <section className="text-black pt-8">
-            <MovieCategory title="Latest Trailers" onFilterChange={handleFilterChange}>
-                <div className="flex mt-5 pb-10">
-                    {trailers?.map((trailer, id) => (
-                        <div key={id} className="first:ml-7">
-                            <TrailerCard id={trailer.id} name={trailer.name} img={trailer.img_url} filter={filter}/>
-                        </div>
-                    ))}
-                    <div id="space" className="pl-7" />
-                </div>
-            </MovieCategory>
+        <section 
+            style={{
+                backgroundImage: `url(${bgUrl})`,
+                transition: `all 0.3s`
+            }}
+            className="bg-top bg-cover bg-no-repeat">
+            <div className="w-full h-full pt-8"
+                style={{
+                    background: `linear-gradient(to right, rgba(3,37,65, 0.75) 0%, rgba(3,37,65, 0.75) 100%)`
+                }}>
+                <MovieCategory title="Latest Trailers" onFilterChange={handleFilterChange}>
+                    <div className="flex mt-5 pb-10">
+                        {trailers?.map((trailer, id) => (
+                            <div key={id} className="first:ml-7">
+                                <TrailerCard id={trailer.id} name={trailer.name} 
+                                    img={trailer.img_url} filter={filter} 
+                                    onMouseEnter={handleCardHover}/>
+                            </div>
+                        ))}
+                        <div id="space" className="pl-7" />
+                    </div>
+                </MovieCategory>
+            </div>
         </section>
     )
 }
