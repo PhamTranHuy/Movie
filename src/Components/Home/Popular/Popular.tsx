@@ -15,6 +15,7 @@ function Popular() {
     useEffect(() => {
         const getMovies = async () => {
             const data = await getPopular(filter);
+            console.log('request done');
             const movies = formatMovieData(data.data.results);
             setMovies(movies);
         }
@@ -24,6 +25,7 @@ function Popular() {
        catch (error) {
            console.error(error);
        }
+       console.log('popular');
     }, [filter])
     return (
         <section className="text-black pt-8">

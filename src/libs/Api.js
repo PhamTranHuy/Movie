@@ -12,5 +12,6 @@ export const getPopular = async (filter = FILTERS[0]) => {
 }
 
 export const getPosterURL = (path) => {
-    return `https://image.tmdb.org/t/p/original/${path}`;
+    // return `https://image.tmdb.org/t/p/original/${path}`;
+    return `https://image.tmdb.org/t/p/w500/${path}`
 }

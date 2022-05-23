@@ -9,7 +9,7 @@ export const formatDay = (date) => {
 export const formatMovieData = (data) => {
     const movies = data.map((movie) => {
         return {
-            name: movie.title,
+            name: movie.title || movie.name,
             point: movie.vote_average * 10,
             img_url: getPosterURL(movie.poster_path),
             date: movie.release_date

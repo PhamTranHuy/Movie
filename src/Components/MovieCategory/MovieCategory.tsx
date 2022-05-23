@@ -54,7 +54,10 @@ function MovieCategory({title, children, onFilterChange}: props) {
                         bg-darkBlue rounded-3xl"></div>
                 </div>
             </div>
-            <CustomScrollbar style={{ width: '100%', height: '380px' }} >
+            <CustomScrollbar style={{ width: '100%'}}
+                 autoHeight
+                 autoHeightMin={380}
+                 autoHeightMax={450}>
                 {children}
             </CustomScrollbar>
         </div>
