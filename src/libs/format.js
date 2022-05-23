@@ -30,9 +30,10 @@ export const formatTrailerData = (data) => {
 }
 
 export const formatTrailerVideo = (data) => {
-    if (!data[0]) return {}
+    if (!data[0]) return {};
     return {
-        id: data[0].id,        // lasted video's id in array = 0
+        id: data[0].id,  // lasted video's id in array = 0
         name: data[0].name
     }
+    
 }

@@ -29,7 +29,7 @@ function Popular() {
     return (
         <section className="text-black pt-8">
             <MovieCategory title="What's Popular" onFilterChange={handleFilterChange}>
-                <div className="flex mt-5 pb-10">
+                <div className="flex mt-5 pb-5">
                     {movies?.map((movie, id) => (
                         <div key={id} className="first:ml-7">
                             <MovieCard name={movie.name} img={movie.img_url} point={movie.point} date={movie.date}/>
