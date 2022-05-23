@@ -46,7 +46,7 @@ function Movie({name, point, img, date}: props) {
                         <img className="group-hover:circle-menu-blue" alt='' src={process.env.PUBLIC_URL + '/Home/circle-more.svg'} />
                     </div>
             </div>
-            <div className="pl-2">
+            <div className="px-2">
                 <div className="font-bold">{name}</div>
                 <div className="text-[#00000099]">{formatDay(new Date())}</div>
             </div>

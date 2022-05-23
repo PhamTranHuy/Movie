@@ -1,60 +1,22 @@
 import Movie from "../../Movie/Movie"
 import MovieCategory from "../../MovieCategory/MovieCategory"
 import { getPopular } from "../../../libs/Api";
-import { useEffect } from "react";
+import { formatMovieData } from "../../../libs/format";
+import { useState, useEffect } from "react";
 
-const MOVIES = [
-    {
-        name: 'name 1',
-        img_url: 'https://unsplash.it/150/225',
-        point: 30
-    },  {
-        name: 'name 1',
-        img_url: 'https://unsplash.it/150/225',
-        point: 30
-    }, {
-        name: 'name 1',
-        img_url: 'https://unsplash.it/150/225',
-        point: 30
-    }, {
-        name: 'name 1',
-        img_url: 'https://unsplash.it/150/225',
-        point: 30
-    }, {
-        name: 'name 1',
-        img_url: 'https://unsplash.it/150/225',
-        point: 30
-    },{
-        name: 'name 1',
-        img_url: 'https://unsplash.it/150/225',
-        point: 30
-    },{
-        name: 'name 1',
-        img_url: 'https://unsplash.it/150/225',
-        point: 30
-    }, {
-        name: 'name 1',
-        img_url: 'https://unsplash.it/150/225',
-        point: 30
-    }, {
-        name: 'name 1',
-        img_url: 'https://unsplash.it/150/225',
-        point: 30
-    }, {
-        name: 'name 1',
-        img_url: 'https://unsplash.it/150/225',
-        point: 30
-    }, {
-        name: 'name 1',
-        img_url: 'https://unsplash.it/150/225',
-        point: 30
-    }
-]
 function Popular() {
+    const [movies, setMovies] = useState<any[]>();
+    const [filter, setFilter] = useState();
+
+    const handleFilterChange = (filter: any) => {
+        setFilter(filter);
+    }
+
     useEffect(() => {
         const getMovies = async () => {
-            const data = await getPopular();
-            console.log(data.data.results);
+            const data = await getPopular(filter);
+            const movies = formatMovieData(data.data.results);
+            setMovies(movies);
         }
         try {
             getMovies();
@@ -62,12 +24,12 @@ function Popular() {
        catch (error) {
            console.error(error);
        }
-    }, [])
+    }, [filter])
     return (
         <section className="text-black pt-8">
-            <MovieCategory title="What's Popular">
+            <MovieCategory title="What's Popular" onFilterChange={handleFilterChange}>
                 <div className="flex mt-5 pb-10">
-                    {MOVIES.map((movie, id) => (
+                    {movies?.map((movie, id) => (
                         <div key={id} className="first:ml-7">
                             <Movie name={movie.name} img={movie.img_url} point={movie.point}/>
                         </div>

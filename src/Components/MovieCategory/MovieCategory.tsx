@@ -1,14 +1,15 @@
 import clsx from 'clsx';
-import { useState, useLayoutEffect, ReactNode } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 import CustomScrollbar from '../CustomScrollbar/CustomScrollbar';
 
 interface props {
     title?: string,
-    children?: ReactNode
+    children?: ReactNode,
+    onFilterChange?: (filter: any) => void
 }
 export const FILTERS = ["On TV", "In Theaters"];
 
-function MovieCategory({title, children}: props) {
+function MovieCategory({title, children, onFilterChange}: props) {
     const [filter, setFilter] = useState<string>(FILTERS[0]);
     const [filterBgPosition, setFilterBgPosition] = useState<{}>();
 
@@ -27,9 +28,12 @@ function MovieCategory({title, children}: props) {
         setFilter(e.target.innerText);
     }
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         setFilterBgPosition(getFilterPosition());
-    }, [filter])
+        if (onFilterChange) {
+            onFilterChange(filter);
+        }
+    }, [filter, onFilterChange])
     return (
         <div>
             <div className="flex font-semibold px-10">
