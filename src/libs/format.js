@@ -17,3 +17,22 @@ export const formatMovieData = (data) => {
     });
     return movies;
 }
+
+export const formatTrailerData = (data) => {
+    const movies = data.map((movie) => {
+        return {
+            id: movie.id,
+            name: movie.title || movie.name,
+            img_url: getPosterURL(movie.backdrop_path)
+        }
+    });
+    return movies;
+}
+
+export const formatTrailerVideo = (data) => {
+    if (!data[0]) return {}
+    return {
+        id: data[0].id,        // lasted video's id in array = 0
+        name: data[0].name
+    }
+}

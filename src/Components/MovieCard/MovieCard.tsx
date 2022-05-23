@@ -73,7 +73,6 @@ function MovieCard({name, point, img, date}: props) {
                     <div className="text-[#00000099]">{formatDay(date)}</div>
                 </div>
             </div>
-            
         </div>
     )
 }
