@@ -33,7 +33,7 @@ function Popular() {
                 <div className="flex mt-5 pb-10">
                     {movies?.map((movie, id) => (
                         <div key={id} className="first:ml-7">
-                            <Movie name={movie.name} img={movie.img_url} point={movie.point}/>
+                            <Movie name={movie.name} img={movie.img_url} point={movie.point} date={movie.date}/>
                         </div>
                     ))}
                     <div id="space" className="pl-7" />
