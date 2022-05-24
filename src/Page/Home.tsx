@@ -1,3 +1,4 @@
+import Join from '../Components/Home/Join/Join'
 import Lasted from '../Components/Home/Lasted/Lasted'
 import Popular from '../Components/Home/Popular/Popular'
 import Trending from '../Components/Home/Trending/Trending'
@@ -12,6 +13,7 @@ function Home() {
                 <Popular />
                 <Lasted />
                 <Trending />
+                <Join />
             </div>
         </div>
     )
