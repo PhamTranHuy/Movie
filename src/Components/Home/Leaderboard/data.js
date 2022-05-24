@@ -1,4 +1,4 @@
-export default LEADER_BOARD = [
+const LEADER_BOARD = [
     {
         name: "Ritx",
         all_time: 31789,
@@ -38,6 +38,7 @@ export default LEADER_BOARD = [
     }, {
         name: "Aktivator",
         all_time: 5901,
-        this_week: 343
+        this_week: 3343
     }
 ]
+export default LEADER_BOARD;
