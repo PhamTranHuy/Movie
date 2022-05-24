@@ -1,3 +1,6 @@
+export const TYPE_VIDEO_FILTERS = ["On TV", "In Theaters"];
+export const TIME_FILTERS = ["Today", "This Week"];
+
 export const getFilterPosition = (filterElement: any) => {
     const filterActive = filterElement?.querySelector(".active-text");
     if (!filterActive || !filterElement) return;

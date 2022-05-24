@@ -1,5 +1,6 @@
 import Lasted from '../Components/Home/Lasted/Lasted'
 import Popular from '../Components/Home/Popular/Popular'
+import Trending from '../Components/Home/Trending/Trending'
 import WelcomeBanner from '../Components/Home/WelcomeBanner/WelcomeBanner'
 import Layout from '../HOC/Layout'
 
@@ -10,6 +11,7 @@ function Home() {
                 <WelcomeBanner />
                 <Popular />
                 <Lasted />
+                <Trending />
             </div>
         </div>
     )

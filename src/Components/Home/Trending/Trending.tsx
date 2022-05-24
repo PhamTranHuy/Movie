@@ -1,11 +1,11 @@
-import MovieCard from "../../MovieCard/MovieCard"
 import MovieCategory from "../../MovieCategory/MovieCategory"
-import { getPopular } from "../../../libs/Api";
-import { formatMovieData } from "../../../libs/Format";
+import { TIME_FILTERS } from "../../../libs/MovieCategory";
 import { useState, useEffect } from "react";
-import { TYPE_VIDEO_FILTERS } from '../../../libs/MovieCategory';
+import { getTrending } from "../../../libs/Api";
+import { formatMovieData } from "../../../libs/Format";
+import MovieCard from "../../MovieCard/MovieCard";
 
-function Popular() {
+function Trending() {
     const [movies, setMovies] = useState<any[]>();
     const [filter, setFilter] = useState();
 
@@ -16,7 +16,7 @@ function Popular() {
     useEffect(() => {
         if(!filter) return;
         const getMovies = async () => {
-            const data = await getPopular(filter);
+            const data = await getTrending(filter);
             const movies = formatMovieData(data.data.results);
             setMovies(movies);
         }
@@ -27,9 +27,12 @@ function Popular() {
            console.error(error);
         }
     }, [filter])
+
     return (
-        <section className="text-black pt-8">
-            <MovieCategory title="What's Popular" categoryFilter={TYPE_VIDEO_FILTERS} onFilterChange={handleFilterChange}>
+        <section style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL + '/Home/trending-bg.svg'})`
+        }} className="text-black pt-8 bg-no-repeat bg-bottom">
+            <MovieCategory title="Trending" categoryFilter={TIME_FILTERS} onFilterChange={handleFilterChange}>
                 <div className="flex mt-5 pb-5">
                     {movies?.map((movie, id) => (
                         <div key={id} className="first:ml-7">
@@ -43,4 +46,4 @@ function Popular() {
     )
 }
 
-export default Popular
+export default Trending

@@ -6,13 +6,13 @@ import { getFilterPosition, getFilterClassStyle } from '../../libs/MovieCategory
 interface props {
     dark?: boolean,
     title?: string,
+    categoryFilter: Array<string>,
     children?: ReactNode,
     onFilterChange?: (filter: any) => void
 }
-export const FILTERS = ["On TV", "In Theaters"];
 
-function MovieCategory({dark, title, children, onFilterChange}: props) {
-    const [filter, setFilter] = useState<string>(FILTERS[0]);
+function MovieCategory({dark, title, categoryFilter, children, onFilterChange}: props) {
+    const [filter, setFilter] = useState<string>(categoryFilter[0]);
     const [filterBgPosition, setFilterBgPosition] = useState<{}>();
     const filterWrapper = useRef<any>();
 
@@ -35,7 +35,7 @@ function MovieCategory({dark, title, children, onFilterChange}: props) {
                     "relative flex border rounded-3xl",
                     dark ? "border-[#26cda4]" : "border-black"
                 )}>
-                    {FILTERS.map((name, index) => (
+                    {categoryFilter.map((name, index) => (
                         <div key={index} 
                             style={{
                                 transition: '-webkit-text-fill-color 0.5s'

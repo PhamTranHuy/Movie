@@ -3,6 +3,7 @@ import { getLasted } from '../../../libs/Api';
 import { formatTrailerData } from "../../../libs/Format";
 import { useState, useEffect } from 'react';
 import TrailerCard from '../../TrailerCard/TrailerCard';
+import { TYPE_VIDEO_FILTERS } from '../../../libs/MovieCategory';
 
 function Lasted() {
     const [trailers, setTrailers] = useState<any[]>();
@@ -43,7 +44,8 @@ function Lasted() {
                 style={{
                     background: `linear-gradient(to right, rgba(3,37,65, 0.75) 0%, rgba(3,37,65, 0.75) 100%)`
                 }}>
-                <MovieCategory dark={true} title="Latest Trailers" onFilterChange={handleFilterChange}>
+                <MovieCategory dark={true} title="Latest Trailers" 
+                    categoryFilter={TYPE_VIDEO_FILTERS} onFilterChange={handleFilterChange}>
                     <div className="flex mt-5 pb-5">
                         {trailers?.map((trailer, id) => (
                             <div key={id} className="first:ml-7">
