@@ -26,6 +26,14 @@ export const getVideo = async (filter = TYPE_VIDEO_FILTERS[0], videoId) => {
         return axios.get(`https://api.themoviedb.org/3/movie/${videoId}/videos?api_key=${API_KEY}&language=en-US`);
     }
 }
+
+export const getTrending = async (filter = TIME_FILTERS[0]) => {
+    if (filter === TIME_FILTERS[0]) {
+        return axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}&language=en-US&page=1`)
+    } else {
+        return axios.get(`https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=en-US&page=1`)
+    }
+}
 export const getPosterURL = (path) => {
     return `https://image.tmdb.org/t/p/w500/${path}`
 }
