@@ -1,7 +1,7 @@
 import MovieCard from "../../MovieCard/MovieCard"
 import MovieCategory from "../../MovieCategory/MovieCategory"
 import { getPopular } from "../../../libs/Api";
-import { formatMovieData } from "../../../libs/format";
+import { formatMovieData } from "../../../libs/Format";
 import { useState, useEffect } from "react";
 
 function Popular() {

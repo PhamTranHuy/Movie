@@ -20,7 +20,7 @@ const CircularProgressbarStyle = {
         fontWeight: 'bold'
     }
 }
-function MovieCard({name, point, img, date}: props) {
+function Movie({name, point, img, date}: props) {
     const getPathColor = (point?: number) => {
         if (!point) return; 
         if (point >= 70) {
@@ -64,8 +64,8 @@ function MovieCard({name, point, img, date}: props) {
                                     }
                                 }}/>
                         </div>
-                        <div className="absolute top-2 right-2 w-7 opacity-70 hover:opacity-100 hover:child:circle-menu-blue">
-                            <img alt='' src={process.env.PUBLIC_URL + '/Home/circle-more.svg'} />
+                        <div className="absolute top-2 right-2 w-7 opacity-60 group">
+                            <img className="group-hover:circle-menu-blue" alt='' src={process.env.PUBLIC_URL + '/Home/circle-more.svg'} />
                         </div>
                 </div>
                 <div className="px-2">
@@ -73,8 +73,9 @@ function MovieCard({name, point, img, date}: props) {
                     <div className="text-[#00000099]">{formatDay(date)}</div>
                 </div>
             </div>
+            
         </div>
     )
 }
 
-export default MovieCard
+export default Movie

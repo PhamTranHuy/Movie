@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import { getVideo } from '../../libs/Api';
-import { formatTrailerVideo } from '../../libs/format';
+import { formatTrailerVideo } from '../../libs/Format';
 
 interface props {
     name?: string,

@@ -1,6 +1,6 @@
 import MovieCategory from '../../MovieCategory/MovieCategory';
 import { getLasted } from '../../../libs/Api';
-import { formatTrailerData } from "../../../libs/format";
+import { formatTrailerData } from "../../../libs/Format";
 import { useState, useEffect } from 'react';
 import TrailerCard from '../../TrailerCard/TrailerCard';
 

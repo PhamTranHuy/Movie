@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { useState, useEffect, ReactNode, useRef } from 'react';
 import CustomScrollbar from '../CustomScrollbar/CustomScrollbar';
+import { getFilterPosition, getFilterClassStyle } from '../../libs/MovieCategory';
 
 interface props {
     dark?: boolean,
@@ -15,38 +16,12 @@ function MovieCategory({dark, title, children, onFilterChange}: props) {
     const [filterBgPosition, setFilterBgPosition] = useState<{}>();
     const filterWrapper = useRef<any>();
 
-    const getFilterPosition = () => {
-        const wrapper = filterWrapper.current;
-        const filterActive = wrapper.querySelector(".active-text");
-        if (!filterActive || !wrapper) return;
-        const filterBounding = filterActive.getBoundingClientRect();
-        const wrapperBounding = wrapper.getBoundingClientRect();
-        return {
-            left: filterBounding.left - wrapperBounding.left,
-            width: filterBounding.width
-        }
-    }
-    const getFilterClassStyle = (dark?: boolean, filter?: string, name?: string) => {
-        if (filter === name) {
-            if (dark) {
-                return "dark active-text";
-            } else {
-                return "active-text";
-            }
-        } else {
-            if (dark) {
-                return "text-white";
-            } else {
-                return "text-darkBlue";
-            }
-        }
-    }
     const handleFilterClick = (e: any) => {
         setFilter(e.target.innerText);
     }
 
     useEffect(() => {
-        setFilterBgPosition(getFilterPosition());
+        setFilterBgPosition(getFilterPosition(filterWrapper.current));
         if (onFilterChange) {
             onFilterChange(filter);
         }
