@@ -64,8 +64,8 @@ function MovieCard({name, point, img, date}: props) {
                                     }
                                 }}/>
                         </div>
-                        <div className="absolute top-2 right-2 w-7 opacity-60 group">
-                            <img className="group-hover:circle-menu-blue" alt='' src={process.env.PUBLIC_URL + '/Home/circle-more.svg'} />
+                        <div className="absolute top-2 right-2 w-7 opacity-70 hover:opacity-100 hover:child:circle-menu-blue">
+                            <img alt='' src={process.env.PUBLIC_URL + '/Home/circle-more.svg'} />
                         </div>
                 </div>
                 <div className="px-2">

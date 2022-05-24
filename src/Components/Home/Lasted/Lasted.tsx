@@ -36,14 +36,14 @@ function Lasted() {
         <section 
             style={{
                 backgroundImage: `url(${bgUrl})`,
-                transition: `all 0.3s`
+                transition: `all 0.4s`
             }}
             className="bg-top bg-cover bg-no-repeat">
             <div className="w-full h-full pt-8"
                 style={{
                     background: `linear-gradient(to right, rgba(3,37,65, 0.75) 0%, rgba(3,37,65, 0.75) 100%)`
                 }}>
-                <MovieCategory title="Latest Trailers" onFilterChange={handleFilterChange}>
+                <MovieCategory dark={true} title="Latest Trailers" onFilterChange={handleFilterChange}>
                     <div className="flex mt-5 pb-5">
                         {trailers?.map((trailer, id) => (
                             <div key={id} className="first:ml-7">

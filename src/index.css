@@ -43,10 +43,21 @@ input {
 	}
 }
 @layer component {
-	.filter-gradient-text {
+	.dark.active-text {
+		background: rgba(3,37,65, 1);
+		-webkit-background-clip: text;
+    	-webkit-text-fill-color: transparent;
+	}
+	.active-text {
 		@apply bg-gradient-to-r from-[#c0fecf] to-[#1ed5a9];
 		-webkit-background-clip: text;
     	-webkit-text-fill-color: transparent;
+	}
+	.dark-pointer-filter {
+		background: linear-gradient(to right, rgba(192, 254, 207, 1) 0%, rgba(30, 213, 169, 1) 100%);;
+	}
+	.pointer-filter {
+		@apply bg-darkBlue;
 	}
 }
 
