@@ -54,10 +54,16 @@ input {
     	-webkit-text-fill-color: transparent;
 	}
 	.dark-pointer-filter {
-		background: linear-gradient(to right, rgba(192, 254, 207, 1) 0%, rgba(30, 213, 169, 1) 100%);;
+		background: linear-gradient(to right, rgba(192, 254, 207, 1) 0%, rgba(30, 213, 169, 1) 100%);
 	}
 	.pointer-filter {
 		@apply bg-darkBlue;
+	}
+	.bg-linear-green {
+		background: linear-gradient(to right, rgba(192, 254, 207, 1) 0%, rgba(30, 213, 169, 1) 100%);
+	}
+	.bg-linear-orange {
+		background: linear-gradient(to right, rgba(253,193,112, 1) 0%, rgba(217,59,99, 1) 100%);
 	}
 }
 
