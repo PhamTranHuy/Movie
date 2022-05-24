@@ -29,7 +29,9 @@ function Trending() {
     }, [filter])
 
     return (
-        <section className="text-black pt-8">
+        <section style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL + '/Home/trending-bg.svg'})`
+        }} className="text-black pt-8 bg-no-repeat bg-bottom">
             <MovieCategory title="Trending" categoryFilter={TIME_FILTERS} onFilterChange={handleFilterChange}>
                 <div className="flex mt-5 pb-5">
                     {movies?.map((movie, id) => (
