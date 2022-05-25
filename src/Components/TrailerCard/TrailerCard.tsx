@@ -8,7 +8,8 @@ interface props {
     id?: number,
     img?: string,
     filter?: string,
-    onMouseEnter?: (url?: string) => void
+    onMouseEnter?: (url?: string) => void,
+    switchTime?: number
 }
 interface videoType {
     name?: string,
@@ -17,23 +18,28 @@ interface videoType {
 
 function TrailerCard({id, name, img, filter, onMouseEnter}: props) {
     const [video, setVideo] = useState<videoType>();
+    const [hidden, setHidden] = useState<boolean>(false);
 
     const handleMouseEnter = () => {
         if (!onMouseEnter) return;
         onMouseEnter(img);
     }
     useEffect(() => {
+        if (video) return;
         (async () => {
             const res = await getVideo(filter, id);
             const video = formatTrailerVideo(res.data.results);
+            if (!video.id || !video.name) {
+                setHidden(true);
+            }
             setVideo(video);
         })();
-    }, [id, filter])
+    }, [id, filter, video])
 
     return (
         <div className={clsx(
             "px-3",
-            !video?.id && "hidden"
+            hidden && "hidden"
         )}>
             <div>
                 <div className="relative w-[300px] h-[168px] mb-6 

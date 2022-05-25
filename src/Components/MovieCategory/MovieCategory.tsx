@@ -54,9 +54,9 @@ function MovieCategory({dark, title, categoryFilter, children, onFilterChange}: 
                 </div>
             </div>
             <CustomScrollbar style={{ width: '100%'}}
-                 autoHeight
-                 autoHeightMin={300}
-                 autoHeightMax={450}>
+                autoHeight
+                autoHeightMin={300}
+                autoHeightMax={450}>
                 {children}
             </CustomScrollbar>
         </div>
