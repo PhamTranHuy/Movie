@@ -7,7 +7,6 @@ function Leaderboard() {
     useEffect (() => {
         const processedData = processLeaderboardData(LEADER_BOARD);
         setLeaderboard(processedData);
-        console.log(processedData);
     }, []);
 
     return (

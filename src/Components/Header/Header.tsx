@@ -1,8 +1,24 @@
+import { useEffect, useState } from "react";
 import Navigator from "./Navigator/Navigator";
+import useWindowScroll from "../../Hooks/useWindowScroll";
 
 export default function Header() {
+	const windowScroll = useWindowScroll();
+	const [hidden, setHidden] = useState(false);
+	useEffect(() => {
+		if (windowScroll.y <= 150) return;
+		if (windowScroll.directionY === 'down') {
+			setHidden(true);
+		} else {
+			setHidden(false);
+		}
+	}, [windowScroll])
 	return (
-		<div className="fixed top-0 left-0 right-0 bg-darkBlue font-semibold">
+		<div style={{
+				top: `${hidden ? '-20%' : '0'}`,
+				transition: `top 0.5s`
+			}} 
+			className="fixed z-50 top-0 left-0 right-0 bg-darkBlue font-semibold">
 			<div className="layout-max-w m-auto">
 				<div className="flex-between px-10 py-5">
 					<div className="flex-between">
