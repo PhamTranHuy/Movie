@@ -65,6 +65,9 @@ input {
 	.bg-linear-orange {
 		background: linear-gradient(to right, rgba(253,193,112, 1) 0%, rgba(217,59,99, 1) 100%);
 	}
+	.bg-linear-white {
+		background-image: linear-gradient(to right, rgba(255,255,255,0) 0%, #fff 100%);
+	}
 }
 
 @layer utilities {

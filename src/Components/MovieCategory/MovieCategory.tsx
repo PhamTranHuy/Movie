@@ -14,10 +14,18 @@ interface props {
 function MovieCategory({dark, title, categoryFilter, children, onFilterChange}: props) {
     const [filter, setFilter] = useState<string>(categoryFilter[0]);
     const [filterBgPosition, setFilterBgPosition] = useState<{}>();
+    const [scrolled, setScrolled] = useState(false);
     const filterWrapper = useRef<any>();
 
     const handleFilterClick = (e: any) => {
         setFilter(e.target.innerText);
+    }
+    const handleScrolling = (values: any) => {
+        if (values.scrollLeft > 100) {
+            setScrolled(true);
+        } else {
+            setScrolled(false);
+        }
     }
 
     useEffect(() => {
@@ -56,9 +64,14 @@ function MovieCategory({dark, title, categoryFilter, children, onFilterChange}: 
             <CustomScrollbar style={{ width: '100%'}}
                 autoHeight
                 autoHeightMin={300}
-                autoHeightMax={450}>
+                autoHeightMax={450}
+                onScrollFrame={handleScrolling}>
                 {children}
             </CustomScrollbar>
+            <div style={{
+                opacity: scrolled ? '0' : '1',
+                transition: `opacity 0.5s`
+            }} className="absolute right-0 top-0 bottom-0 w-[60px] bg-linear-white" />
         </div>
     )
 }

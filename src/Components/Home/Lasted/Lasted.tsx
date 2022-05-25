@@ -49,7 +49,7 @@ function Lasted() {
                 backgroundImage: `url(${bgUrl})`,
                 transition: `all 0.4s`
             }}
-            className="bg-top bg-cover bg-no-repeat">
+            className="relative bg-top bg-cover bg-no-repeat">
             <div className="w-full h-full pt-8"
                 style={{
                     background: `linear-gradient(to right, rgba(3,37,65, 0.75) 0%, rgba(3,37,65, 0.75) 100%)`

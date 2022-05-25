@@ -38,7 +38,7 @@ function Popular() {
         setLoaded(false);
     }, [movies]);
     return (
-        <section className="text-black pt-8">
+        <section className="relative text-black pt-8">
             <MovieCategory title="What's Popular" categoryFilter={TYPE_VIDEO_FILTERS} onFilterChange={handleFilterChange}>
                 <div style={{transition: `opacity ${OPACITY_DURATION}ms`}} 
                     className={clsx(

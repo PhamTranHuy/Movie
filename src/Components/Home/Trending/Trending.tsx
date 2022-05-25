@@ -41,7 +41,7 @@ function Trending() {
     return (
         <section style={{
             backgroundImage: `url(${process.env.PUBLIC_URL + '/Home/trending-bg.svg'})`
-        }} className="text-black pt-8 bg-no-repeat bg-bottom">
+        }} className="relative text-black pt-8 bg-no-repeat bg-bottom">
             <MovieCategory title="Trending" categoryFilter={TIME_FILTERS} onFilterChange={handleFilterChange}>
                 <div style={{transition: `opacity ${OPACITY_DURATION}ms`}} 
                     className={clsx(
