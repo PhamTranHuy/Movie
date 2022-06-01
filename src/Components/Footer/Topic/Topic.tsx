@@ -15,7 +15,7 @@ export default function Topic ({ title, detail }: TopicProps) {
     <div className="mx-5">
         <h3 className="font-bold text-xl">{title}</h3>
         {detail?.map((item, index) => (
-            <div key={index} className="text-base">
+            <div key={index} className="text-lg">
                 <a href=''>{item?.text}</a>
             </div>
         ))}
