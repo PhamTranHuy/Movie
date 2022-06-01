@@ -16,7 +16,7 @@ export default function Topic ({ title, detail }: TopicProps) {
         <h3 className="font-bold text-xl">{title}</h3>
         {detail?.map((item, index) => (
             <div key={index} className="text-lg">
-                <a href=''>{item?.text}</a>
+                <button>{item?.text}</button>
             </div>
         ))}
     </div>

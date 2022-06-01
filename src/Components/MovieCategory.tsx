@@ -50,7 +50,7 @@ function MovieCategory({dark, title, categoryFilter, children, onFilterChange}: 
                             }}
                             className={clsx(
                                 getFilterClassStyle(dark, filter, name),
-                                "flex-center px-5 rounded-3xl z-10 ml-[-1px]")}
+                                "flex-center px-5 rounded-3xl z-10 ml-[-1px] cursor-pointer")}
                             onClick={handleFilterClick}>{name}</div>
                     ))}
                     <div style={{
