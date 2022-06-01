@@ -1,9 +1,9 @@
-import MovieCategory from "../../MovieCategory/MovieCategory"
-import { TIME_FILTERS } from "../../../libs/MovieCategory";
+import MovieCategory from "../../MovieCategory"
+import { TIME_FILTERS } from "../../../utils/MovieCategory";
 import { useState, useEffect } from "react";
-import { getTrending } from "../../../libs/Api";
-import { formatMovieData } from "../../../libs/Format";
-import MovieCard from "../../MovieCard/MovieCard";
+import { getTrending } from "../../../Services/Api";
+import { formatMovieData } from "../../../Services/FormatData";
+import MovieCard from "../../MovieCard";
 import clsx from "clsx";
 
 function Trending() {

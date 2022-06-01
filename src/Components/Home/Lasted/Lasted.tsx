@@ -1,15 +1,15 @@
-import MovieCategory from '../../MovieCategory/MovieCategory';
-import { getLasted } from '../../../libs/Api';
-import { formatTrailerData } from "../../../libs/Format";
+import MovieCategory from '../../MovieCategory';
+import { getLasted } from '../../../Services/Api';
+import { formatTrailerData } from "../../../Services/FormatData";
 import { useState, useEffect } from 'react';
-import TrailerCard from '../../TrailerCard/TrailerCard';
-import { TYPE_VIDEO_FILTERS } from '../../../libs/MovieCategory';
+import TrailerCard from '../../TrailerCard';
+import { TYPE_VIDEO_FILTERS } from '../../../utils/MovieCategory';
 import clsx from "clsx";
 
 function Lasted() {
     const OPACITY_DURATION = 500;
     const [trailers, setTrailers] = useState<any[]>();
-    const [filter, setFilter] = useState<any>();
+    const [filter, setFilter] = useState<string | undefined>();
     const [bgUrl, setBgUrl] = useState<string | undefined>();
     const [loaded, setLoaded] = useState<boolean>(false);
 

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { useState, useEffect, ReactNode, useRef } from 'react';
-import CustomScrollbar from '../CustomScrollbar/CustomScrollbar';
-import { getFilterPosition, getFilterClassStyle } from '../../libs/MovieCategory';
+import CustomScrollbar from './CustomScrollbar';
+import { getFilterPosition, getFilterClassStyle } from '../utils/MovieCategory';
 
 interface props {
     dark?: boolean,

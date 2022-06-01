@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { TYPE_VIDEO_FILTERS, TIME_FILTERS } from './MovieCategory';
+import { TYPE_VIDEO_FILTERS, TIME_FILTERS } from '../utils/MovieCategory';
 
 
 const API_KEY = '25914d56a2a431c00e5c670c45661a2e';

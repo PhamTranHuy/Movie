@@ -1,5 +1,5 @@
 import LEADER_BOARD from './data';
-import { processLeaderboardData, numberWithCommas } from '../../../libs/Leaderboard';
+import { processLeaderboardData, numberWithCommas } from '../../../utils/Leaderboard';
 import { useState, useEffect } from 'react';
 function Leaderboard() {
     const [leaderboard, setLeaderboard] = useState<any[]>();

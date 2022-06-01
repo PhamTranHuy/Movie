@@ -1,9 +1,9 @@
-import MovieCard from "../../MovieCard/MovieCard"
-import MovieCategory from "../../MovieCategory/MovieCategory"
-import { getPopular } from "../../../libs/Api";
-import { formatMovieData } from "../../../libs/Format";
+import MovieCard from "../../MovieCard";
+import MovieCategory from "../../MovieCategory";
+import { getPopular } from "../../../Services/Api";
+import { formatMovieData } from "../../../Services/FormatData";
 import { useState, useEffect } from "react";
-import { TYPE_VIDEO_FILTERS } from '../../../libs/MovieCategory';
+import { TYPE_VIDEO_FILTERS } from '../../../utils/MovieCategory';
 import clsx from "clsx";
 
 function Popular() {
